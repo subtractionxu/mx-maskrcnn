@@ -36,10 +36,26 @@ numpy(1.12.1), cv2(2.4.9), PIL(4.3), matplotlib(2.1.0), cython(0.26.1), easydict
 
 ## Preparation for Training
 
-0. Install Mxnet and python interface
+0. Install Mxnet
  ```
  git clone --recursive https://github.com/apache/incubator-mxnet
  ```
+Enabe GPU 
+```
+ cd incubator-mxnet
+ cp make/conig.mk ./
+```
+Edit ./config.mk, change USE_CUDE from 0 to 1 and USE_CUDA_PATH to /usr/local/cuda
+Then make
+```
+ make -j64
+```
+Install python interface
+```
+cd python
+python setup.py install
+```
+ 
 1. Download Cityscapes data (gtFine_trainvaltest.zip, leftImg8bit_trainvaltest.zip). Extract them into 'data/cityscape/'.
  The folder structure would then look as shown below:
 
@@ -73,7 +89,11 @@ cp rcnn/CXX_OP/* incubator-mxnet/src/operator/
 ```
 
 To build MXNet from source, please refer to the [tutorial](https://mxnet.incubator.apache.org/get_started/build_from_source.html).
-
+* Rebuild Mxnet
+```
+cd incubator-mxnet
+make
+```
 4. Build related cython code.
 
 ```
