@@ -36,6 +36,10 @@ numpy(1.12.1), cv2(2.4.9), PIL(4.3), matplotlib(2.1.0), cython(0.26.1), easydict
 
 ## Preparation for Training
 
+0. Install Mxnet and python interface
+ ```
+ git clone --recursive https://github.com/apache/incubator-mxnet
+ ```
 1. Download Cityscapes data (gtFine_trainvaltest.zip, leftImg8bit_trainvaltest.zip). Extract them into 'data/cityscape/'.
  The folder structure would then look as shown below:
 
