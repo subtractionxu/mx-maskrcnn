@@ -40,17 +40,17 @@ numpy(1.12.1), cv2(2.4.9), PIL(4.3), matplotlib(2.1.0), cython(0.26.1), easydict
  ```
  git clone --recursive https://github.com/apache/incubator-mxnet
  ```
-Enabe GPU 
+ Enabe GPU 
 ```
  cd incubator-mxnet
  cp make/conig.mk ./
 ```
-Edit ./config.mk, change USE_CUDE from 0 to 1 and USE_CUDA_PATH to /usr/local/cuda
-Then make
+ Edit "./config.mk", change "USE_CUDA" from "0" to "1" and "USE_CUDA_PATH" to "/usr/local/cuda"
+ Then make
 ```
  make -j64
 ```
-Install python interface
+ Install python interface
 ```
 cd python
 python setup.py install
